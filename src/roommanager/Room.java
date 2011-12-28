@@ -77,8 +77,16 @@ public class Room {
         }
     }
 
-    @Override
-    public String toString() {
+    @Override public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Room) ) return false;
+        return this.type == ((Room)obj).type; 
+    }
+
+    @Override public int hashCode() {
+        return this.type.hashCode();
+    }
+
+    @Override public String toString() {
         return "Room{" + "type=" + type + ", occup=" + occup + ", adults=" + adults + ", childrens=" + childrens + ", infants=" + infants + 
                 ", total=" + getTotal() + ", wastage=" + getWastage()  + ", kids=" + getKids() + '}' ;
     }

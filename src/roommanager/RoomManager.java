@@ -31,11 +31,30 @@ public class RoomManager {
             new Room(Room.Type.Quad,4,4,0,0) 
         }; 
         
-        System.out.println ("Version 123");
+        System.out.println ("Version 124");
         System.out.println (Arrays.deepToString(rom));
         Arrays.sort(rom, new Room.okSort() );
         System.out.println (Arrays.deepToString(rom));
   
+        
+         RoomCount rc = new RoomCount();
+         rc.setCount(Room.Type.Double, 1);
+         rc.setCount(Room.Type.Triple, 32);
+         rc.setCount(Room.Type.Quad, -2);
+         rc.setCount(Room.Type.Triple, 3);
+        
+         System.out.println (rc);
+         
+         System.out.println (rc.getDecCount(Room.Type.Triple));
+         System.out.println (rc.getDecCount(Room.Type.Double));
+         
+          rc.setCount(Room.Type.Double, 0);
+         rc.setCount(Room.Type.Triple, -32);
+         rc.setCount(Room.Type.Quad, 5);
+         rc.setCount(Room.Type.Triple, 3);
+        
+         System.out.println (rc);        
+        
     }
    
 }
