@@ -78,7 +78,7 @@ public class Room {
     }
 
     @Override public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof Room) ) return false;
+        if (!(obj instanceof Room) ) return false;
         return this.type == ((Room)obj).type; 
     }
 
