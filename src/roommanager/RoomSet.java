@@ -27,6 +27,11 @@ public class RoomSet {
     public RoomSet Append (Room room) {
         return new RoomSet (this,room);
     }
+
+    @Override
+    public String toString() {
+        return "RoomSet{" + "list=" + list + '}';
+    }
     
     
 }

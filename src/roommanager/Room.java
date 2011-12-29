@@ -58,6 +58,10 @@ public class Room {
         return (occup - adults - childrens - infants);
     }
     
+    public Pax getPax () {
+        return new Pax(adults, childrens, infants);
+    }
+    
     public static class occSort implements Comparator<Room> {
         @Override
         public int compare(Room o1, Room o2) {

@@ -1,0 +1,47 @@
+
+Finding best fit for Adults => 4, Children => 1, Infants => 0
+	 in rooms Quad => 0, Triple => 2, Double => 2
+
+Rooms:2 Wastage:0
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+Triple Occupants:3 (Adults:2 Children:1 Infants:0) [0]
+
+Rooms:2 Wastage:1
+Triple Occupants:3 (Adults:2 Children:1 Infants:0) [0]
+Triple Occupants:2 (Adults:2 Children:0 Infants:0) [1]
+
+---
+Finding best fit for Adults => 6, Children => 0, Infants => 0
+	 in rooms Quad => 1, Triple => 1, Double => 4
+
+Rooms:2 Wastage:0
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+Quad Occupants:4 (Adults:4 Children:0 Infants:0) [0]
+
+Rooms:3 Wastage:0
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+
+Rooms:2 Wastage:1
+Quad Occupants:4 (Adults:4 Children:0 Infants:0) [0]
+Triple Occupants:2 (Adults:2 Children:0 Infants:0) [1]
+
+Rooms:3 Wastage:1
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+Double Occupants:1 (Adults:1 Children:0 Infants:0) [1]
+Triple Occupants:3 (Adults:3 Children:0 Infants:0) [0]
+
+Rooms:3 Wastage:2
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+Quad Occupants:2 (Adults:2 Children:0 Infants:0) [2]
+
+Rooms:3 Wastage:3
+Double Occupants:2 (Adults:2 Children:0 Infants:0) [0]
+Quad Occupants:1 (Adults:1 Children:0 Infants:0) [3]
+Triple Occupants:3 (Adults:3 Children:0 Infants:0) [0]
+
+---
+
+

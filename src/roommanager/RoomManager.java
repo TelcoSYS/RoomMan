@@ -30,10 +30,19 @@ public class RoomManager {
     
     private void findBest_Loop (RoomCount rcount, Pax pax, RoomSet rref, int depth) {
         
+        if ( pax.getTotal() <= 0) {
+            if ( pax.getTotal() == 0)  res.add(rref); 
+            return;  }
+    
         List<Room> ok = evalEachRoom (rcount, pax);
-        System.out.println (Arrays.deepToString(ok.toArray()));
+        //System.out.println (Arrays.deepToString(ok.toArray()));
         Collections.sort (ok, new Room.okSort());
-        System.out.println (Arrays.deepToString(ok.toArray()));
+        
+        for (Room room : ok ) {
+            //System.out.println (".");
+            findBest_Loop (rcount.getDecCount(room.getType()),pax.subtract(room.getPax()), rref.Append(room) , depth+1);
+        }
+        
     }    
     
     private  List<Room> evalEachRoom (RoomCount rcount, Pax pax) {
@@ -60,25 +69,31 @@ public class RoomManager {
         return ok;
     }
     
+    //private  void procEachRoom (List<Room> ok, RoomCount rcount, RoomSet rref, Pax pax) {
+        
+
+    
+    
     public Set<Room> getRooms () {
         Set<Room> rms = new HashSet<Room>();
-        rms.add( new Room(Room.Type.Double,2,2,0,0));
-        rms.add( new Room(Room.Type.Triple,3,3,3,2));
-        rms.add( new Room(Room.Type.Quad,4,4,2,2));
+          rms.add( new Room(Room.Type.Double,2,2,0,0));
+          rms.add( new Room(Room.Type.Triple,3,3,3,2));
+          rms.add( new Room(Room.Type.Quad,4,4,2,2));
         return rms;
     }
 
     public RoomCount getRCount () {
         RoomCount rc = new RoomCount();
-        rc.setCount( Room.Type.Double,5);
-        rc.setCount( Room.Type.Triple,3);
-        rc.setCount( Room.Type.Quad,3); 
+          rc.setCount( Room.Type.Double,5);
+          rc.setCount( Room.Type.Triple,3);
+          rc.setCount( Room.Type.Quad,3); 
         return rc;
     }
     
     public void runAlog () {
         
-        findBest (getRooms(), getRCount (), new Pax(2,2,1));
+        RoomSet[] rs =  findBest (getRooms(), getRCount (), new Pax(1,1,1));
+        System.out.println (Arrays.deepToString(rs));
         
     }
     
