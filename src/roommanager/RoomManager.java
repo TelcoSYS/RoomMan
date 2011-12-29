@@ -84,15 +84,15 @@ public class RoomManager {
 
     public RoomCount getRCount () {
         RoomCount rc = new RoomCount();
-          rc.setCount( Room.Type.Double,5);
-          rc.setCount( Room.Type.Triple,3);
-          rc.setCount( Room.Type.Quad,3); 
+          rc.setCount( Room.Type.Double,2);
+          rc.setCount( Room.Type.Triple,2);
+          rc.setCount( Room.Type.Quad,0); 
         return rc;
     }
     
     public void runAlog () {
         
-        RoomSet[] rs =  findBest (getRooms(), getRCount (), new Pax(1,1,1));
+        RoomSet[] rs =  findBest (getRooms(), getRCount (), new Pax(4,1,0));
         System.out.println (Arrays.deepToString(rs));
         
     }
