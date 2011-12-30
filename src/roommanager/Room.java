@@ -66,7 +66,15 @@ public class Room {
         @Override
         public int compare(Room o1, Room o2) {
             if (o1 == null || o2 == null )  throw new ClassCastException();
-            return (o2.getOccup() - o1.getOccup());
+            return (o2.occup - o1.occup);
+        }
+    }
+    
+    public static class typeSort implements Comparator<Room> {
+        @Override
+        public int compare(Room o1, Room o2) {
+            if (o1 == null || o2 == null )  throw new ClassCastException();
+            return (o1.type.compareTo(o2.type));
         }
     }
     

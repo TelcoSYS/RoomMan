@@ -1,0 +1,44 @@
+Example 1
+	Pax{adults=4, childrens=1, infants=0}
+	RoomCount{ Double:2 Triple:2 }
+	[
+	RoomSet{rooms=2, wastage=0, list=[
+		Room{type=Triple, occup=3, adults=2, childrens=1, infants=0, total=3, wastage=0, kids=1}, 
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}]}, 
+	RoomSet{rooms=2, wastage=1, list=[
+		Room{type=Triple, occup=3, adults=2, childrens=1, infants=0, total=3, wastage=0, kids=1}, 
+		Room{type=Triple, occup=3, adults=2, childrens=0, infants=0, total=2, wastage=1, kids=0}]}
+	]
+
+Example 2
+	Pax{adults=6, childrens=0, infants=0}
+	RoomCount{ Double:4 Triple:1 Quad:1 }	
+	[
+	RoomSet{rooms=2, wastage=0, list=[
+		Room{type=Quad, occup=4, adults=4, childrens=0, infants=0, total=4, wastage=0, kids=0}, 
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}]}, 
+	RoomSet{rooms=3, wastage=0, list=[
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}, 
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}, 
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}]}, 
+	RoomSet{rooms=2, wastage=1, list=[
+		Room{type=Quad, occup=4, adults=4, childrens=0, infants=0, total=4, wastage=0, kids=0}, 
+		Room{type=Triple, occup=3, adults=2, childrens=0, infants=0, total=2, wastage=1, kids=0}]}, 
+	RoomSet{rooms=3, wastage=1, list=[
+		Room{type=Triple, occup=3, adults=3, childrens=0, infants=0, total=3, wastage=0, kids=0}, 
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}, 
+		Room{type=Double, occup=2, adults=1, childrens=0, infants=0, total=1, wastage=1, kids=0}]}, 
+	RoomSet{rooms=3, wastage=2, list=[
+		Room{type=Quad, occup=4, adults=2, childrens=0, infants=0, total=2, wastage=2, kids=0}, 
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}, 
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}]}, 
+	RoomSet{rooms=3, wastage=3, list=[
+		Room{type=Quad, occup=4, adults=1, childrens=0, infants=0, total=1, wastage=3, kids=0}, 
+		Room{type=Triple, occup=3, adults=3, childrens=0, infants=0, total=3, wastage=0, kids=0}, 
+		Room{type=Double, occup=2, adults=2, childrens=0, infants=0, total=2, wastage=0, kids=0}]}
+	]
+
+
+
+
+

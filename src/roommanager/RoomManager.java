@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 /**
  *
  * @author cgc
@@ -17,13 +19,13 @@ import java.util.Set;
 public class RoomManager {
 
     private Room[] rooms;
-    private LinkedList<RoomSet> res;
+    private SortedSet<RoomSet> res;
     
     public RoomSet[] findBest (Set<Room> roomlist, RoomCount rcount, Pax pax) {
     
         rooms = (Room[]) roomlist.toArray(new Room[0]);
         Arrays.sort(rooms, new Room.occSort() );
-        res = new LinkedList<RoomSet>();
+        res = new TreeSet<RoomSet>() {};
         findBest_Loop ( rcount, pax, new RoomSet (), 1);
         return (RoomSet[]) res.toArray(new RoomSet[0]);
     }
@@ -69,47 +71,52 @@ public class RoomManager {
         return ok;
     }
     
-    //private  void procEachRoom (List<Room> ok, RoomCount rcount, RoomSet rref, Pax pax) {
-        
-
-    
-    
-    public Set<Room> getRooms () {
-        Set<Room> rms = new HashSet<Room>();
-          rms.add( new Room(Room.Type.Double,2,2,0,0));
-          rms.add( new Room(Room.Type.Triple,3,3,3,2));
-          rms.add( new Room(Room.Type.Quad,4,4,2,2));
-        return rms;
-    }
-
-    public RoomCount getRCount () {
-        RoomCount rc = new RoomCount();
-          rc.setCount( Room.Type.Double,2);
-          rc.setCount( Room.Type.Triple,2);
-          rc.setCount( Room.Type.Quad,0); 
-        return rc;
-    }
-    
-    public void runAlog () {
-        
-        RoomSet[] rs =  findBest (getRooms(), getRCount (), new Pax(4,1,0));
-        System.out.println (Arrays.deepToString(rs));
-        
-    }
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
+        RoomCount rcount;
+        Pax pax ;
+        RoomManager rman = new RoomManager();   
+        RoomSet[] rset ;
+
+         Set<Room> rooms = new HashSet<Room>();
+            rooms.add( new Room(Room.Type.Double,2,2,0,0));
+            rooms.add( new Room(Room.Type.Triple,3,3,3,2));
+            rooms.add( new Room(Room.Type.Quad,4,4,2,2));
+            
+            
+        // example 1
         
-  
-        new RoomManager().runAlog();
+        rcount = new RoomCount();
+            rcount.setCount( Room.Type.Double,2);
+            rcount.setCount( Room.Type.Triple,2);
+            rcount.setCount( Room.Type.Quad,0); 
+    
+        pax = new Pax(4,1,0);
          
+        rset =  rman.findBest (rooms, rcount, pax);
         
-        //System.out.println (Arrays.deepToString(rooms));
-        //Arrays.sort(rooms, new Room.occSort() );
+        System.out.println ("Example 1");
+        System.out.println (pax); System.out.println (rcount); 
+        System.out.println (Arrays.deepToString(rset));
         
+        // example 2
+
+        rcount = new RoomCount();
+            rcount.setCount( Room.Type.Double,4);
+            rcount.setCount( Room.Type.Triple,1);
+            rcount.setCount( Room.Type.Quad,1); 
+    
+        pax = new Pax(6,0,0);
         
+        rset =  rman.findBest (rooms, rcount, pax);
+        
+        System.out.println ("Example 2");
+        System.out.println (pax); System.out.println (rcount); 
+        System.out.println (Arrays.deepToString(rset));
     }
    
 }
